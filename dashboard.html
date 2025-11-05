@@ -102,9 +102,196 @@
       color: #666;
       font-size: 1.1rem;
     }
+
+    /* Header & Footer */
+    .dashboard-header {
+      background: linear-gradient(90deg, #2e7d32, #1b5e20);
+      color: white;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .dashboard-header .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .dashboard-header .logo img {
+      height: 42px;
+      width: 42px;
+      margin-right: 10px;
+      border-radius: 50%;
+      background: white;
+      padding: 5px;
+    }
+
+    .dashboard-header .logo span {
+      color: #c8facc;
+    }
+
+    .dashboard-footer {
+      background: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 5px; /* Reduced padding */
+      font-size: 1rem; /* Slightly smaller text */
+      width: 100%;
+      position: relative;
+      bottom: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .main-content {
+      flex: 1;
+    }
+
+    /* My Plants Gallery Styles */
+    .my-plant-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .my-plant-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .my-plant-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .my-plant-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .my-plant-card h4 {
+      color: #2e7d32;
+      margin: 10px 0;
+    }
+
+    .my-plant-card button {
+      background: #d32f2f;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .my-plant-card button:hover {
+      background: #b71c1c;
+    }
+
+    .empty-message {
+      text-align: center;
+      padding: 40px;
+      border: 2px dashed #2e7d32;
+      border-radius: 12px;
+      background: #f1f8e9;
+      margin: 40px auto;
+      max-width: 600px;
+    }
+
+    .empty-message h2 {
+      color: #2e7d32;
+      margin-bottom: 15px;
+    }
+
+    .empty-message button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .empty-message button:hover {
+      background: #1b5e20;
+    }
+
+    .add-more-btn {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .add-more-btn button {
+      padding: 12px 24px;
+      background: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .add-more-btn button:hover {
+      background: #1b5e20;
+    }
   </style>
 </head>
 <body>
+  <!-- Dashboard Header -->
+  <header class="dashboard-header">
+    <!-- Logo and name on left -->
+    <div class="logo">
+      <img src="./logo.png" alt="Nurtura Logo">
+      <span>Nurture Leaf</span>
+    </div>
+    
+    <!-- Right side actions -->
+    <div class="header-actions">
+      <button onclick="showSection('homeSection', document.querySelector('.sidebar-menu a[onclick*=\'homeSection\']'))" class="nav-btn">
+        <i class="fa fa-home"></i> Home
+      </button>
+      <button onclick="showSection('myPlantsSection', document.querySelector('.sidebar-menu a[onclick*=\'myPlantsSection\']'))" class="nav-btn">
+        <i class="fa fa-leaf"></i> My Plants
+      </button>
+      <button onclick="showSection('communitySection', document.querySelector('.sidebar-menu a[onclick*=\'communitySection\']'))" class="nav-btn">
+        <i class="fa fa-globe"></i> Community
+      </button>
+      <button onclick="showSection('aboutSection', document.querySelector('.sidebar-menu a[onclick*=\'aboutSection\']'))" class="nav-btn">
+        <i class="fa fa-info-circle"></i> About
+      </button>
+      <a href="../index.html" class="logout-btn" role="button">
+        <i class="fa fa-sign-out"></i> Logout
+      </a>
+    </div>
+  </header>
+
   <!-- Hamburger Menu -->
   <button class="hamburger" onclick="toggleSidebar()">☰</button>
 
@@ -126,7 +313,7 @@
         <li><a href="#" onclick="showSection('shopSection', this)"><i class="fa fa-shopping-cart"></i> Shop</a></li>
         <li><a href="#" onclick="showSection('aboutSection', this)"><i class="fa fa-info-circle"></i> About</a></li>
         <li><a href="#" onclick="showSection('faqSection', this)"><i class="fa fa-question-circle"></i> FAQ</a></li>
-        <li><a href="logout.html"><i class="fa fa-sign-out"></i> Logout</a></li>
+        <li><a href="index.html"><i class="fa fa-sign-out"></i> Logout</a></li>
       </ul>
     </nav>
   </aside>
@@ -233,11 +420,7 @@
         <h1>🌱 My Plant Collection</h1>
         <p>Track and manage your personal plant collection</p>
       </div>
-      <div class="coming-soon">
-        <div class="feature-icon">🪴</div>
-        <h2>Coming Soon!</h2>
-        <p>Soon you'll be able to add plants to your personal collection, set watering reminders, track growth, and get personalized care tips.</p>
-      </div>
+      <!-- Content will be dynamically loaded here -->
     </div>
 
     <!-- COMMUNITY SECTION -->
@@ -437,6 +620,11 @@
     </div>
 
   </main>
+
+  <!-- Dashboard Footer -->
+  <footer class="dashboard-footer">
+    <p>© 2025 Nurture Leaf | A Greener World with Smarter Plant Care 🌿</p>
+  </footer>
 
   <!-- Plant Info Modal -->
   <div class="modal" id="plantModal" role="dialog" aria-modal="true" aria-labelledby="plantName" style="display:none;">
