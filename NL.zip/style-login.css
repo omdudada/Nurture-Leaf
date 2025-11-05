@@ -1,0 +1,149 @@
+/* General Background */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: url('Images/5151867.jpg') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 50, 0, 0.6); /* overlay */
+  z-index: 0; 
+  pointer-events: none;
+
+}
+
+/* Header */
+header {
+  position: absolute;
+  top: 10px;
+  left: 40px;
+  z-index: 2;
+}
+
+.logo {
+  display: flex;
+  align-items: flex-start;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+}
+/* Add to style-login.css */
+.logo a {
+  text-decoration: none;
+  color: inherit;
+}
+.logo img {
+  height: 42px;
+  width: 42px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background: white;
+  padding: 5px;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
+}
+
+.logo span {
+  color: #c8facc;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-top: 25px; /* Adjust this value as needed for perfect alignment */
+  text-decoration: none; /* Ensure no underline */
+}
+
+/* Auth Container */
+.auth-container {
+  position: relative;
+  z-index: 1;
+}
+  
+.auth-box {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+  width: 350px;
+  max-width: 90vw; /* Add this line */
+  text-align: center;
+}
+
+.auth-box h2 {
+  margin-bottom: 20px;
+  color: #2e7d32;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: #e0e0e0;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.tab-btn.active {
+  background: #66bb6a;
+  color: white;
+}
+
+/* Forms */
+.form {
+  display: none;
+  flex-direction: column;
+}
+
+.form.active {
+  display: flex;
+}
+
+.form input {
+  margin: 10px 0;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.form button {
+  margin-top: 15px;
+  padding: 12px;
+  background: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form button:hover {
+  background: #1b5e20;
+}
+
+.switch {
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+.switch a {
+  color: #2e7d32;
+  text-decoration: none;
+  font-weight: bold;
+}

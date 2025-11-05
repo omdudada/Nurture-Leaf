@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nurtura - Plant Dashboard</title>
+  <link rel="stylesheet" href="style-dashboard.css">
+</head>
+<body>
+  <!-- Hamburger Menu -->
+  <button class="hamburger" onclick="toggleSidebar()">☰</button>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">
+        <img src="images/logo.png" alt="Nurtura Logo">
+        <span>Nurture Leaf</span>
+      </div>
+      <button class="close-btn" onclick="toggleSidebar()">✖</button>
+    </div>
+    <nav>
+      <a href="#">🏠 Home</a>
+      <div class="submenu">
+        <a href="#">👤 Profile ▼</a>
+        <div class="submenu-items">
+          <a href="#">🌱 My Plants</a>
+          <a href="#">📜 Care History</a>
+          <a href="#">⚙️ Settings</a>
+        </div>
+      </div>
+      <a href="#">⏰ Care Reminders</a>
+      <a href="#">🌍 Community</a>
+      <a href="#">📖 Guides & Resources</a>
+      <a href="#">🛒 Shop</a>
+      <a href="#">ℹ️ About</a>
+      <a href="#">❓ FAQ</a>
+      <a href="#">🚪 Logout</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Search -->
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="🔍 Search plant...">
+      <button id="clearSearch" class="clear-search" type="button" title="Clear search" style="display:none;">✖</button>
+    </div>
+
+    <!-- Plant Gallery -->
+    <div class="plant-gallery" id="plantGallery">
+      <!-- Green/Indoor Plants -->
+      <div class="plant-card" data-name="Monstera">
+        <img src=".\images\Monstera.jpg" alt="Monstera deliciosa" id="monsteraImg">
+        <h3>Monstera</h3>
+      </div>
+      <div class="plant-card" data-name="Pothos">
+        <img src=".\images\Pothos.jpg" alt="Pothos (Epipremnum aureum)">
+        <h3>Pothos</h3>
+      </div>
+      <div class="plant-card" data-name="Jade Plant">
+        <img src=".\images\Jade.jpg" alt="Jade Plant (Crassula ovata)">
+        <h3>Jade Plant</h3>
+      </div>
+      <div class="plant-card" data-name="Prayer Plant">
+        <img src=".\images\Prayer.jpg" alt="Prayer Plant (Calathea sp.)">
+        <h3>Prayer Plant</h3>
+      </div>
+      <div class="plant-card" data-name="Spider Plant">
+        <img src=".\images\Spider.jpg" alt="Spider Plant">
+        <h3>Spider Plant</h3>
+      </div>
+      <div class="plant-card" data-name="Areca Palm">
+        <img src=".\images\ArecaPalm.jpg" alt="Areca Palm">
+        <h3>Areca Palm</h3>
+      </div>
+      <div class="plant-card" data-name="Rubber Plant">
+        <img src=".\images\Rubber.jpg" alt="Rubber Plant (Ficus Elastica)">
+        <h3>Rubber Plant</h3>
+      </div>
+      <div class="plant-card" data-name="Boston Fern">
+        <img src=".\images\Bostorn.jpg" alt="Boston Fern (Nephrolepis Exaltata)">
+        <h3>Boston Fern</h3>
+      </div>
+      <div class="plant-card" data-name="Croton">
+        <img src=".\images\Croton.jpg" alt="Croton (Codiaeum Variegatum)">
+        <h3>Croton</h3>
+      </div>
+      <div class="plant-card" data-name="Oyster Plant">
+        <img src=".\images\Oyester.jpg" alt="Oyster Plant (Tradescantia Spathacea)">
+        <h3>Oyster Plant</h3>
+      </div>
+      <div class="plant-card" data-name="Cactus">
+        <img src=".\images\Cactus.jpg" alt="Cactus">
+        <h3>Cactus</h3>
+      </div>
+      <div class="plant-card" data-name="Tulsi">
+        <img src=".\images\Tulsi.jpg" alt="Tulsi">
+        <h3>Tulsi</h3>
+      </div>
+      <div class="plant-card" data-name="Aloe Vera">
+        <img src=".\images\Aloe vera.jpg" alt="Aloe Vera">
+        <h3>Aloe Vera</h3>
+      </div>
+      <div class="plant-card" data-name="Dragon Plant">
+        <img src=".\images\Dragon plant.jpg" alt="Dragon Plant (Dracaena)">
+        <h3>Dragon Plant</h3>
+      </div>
+      <div class="plant-card" data-name="Bamboo Tree">
+        <img src=".\images\Bamboo.jpg" alt="Bamboo Tree">
+        <h3>Bamboo Tree</h3>
+      </div>
+      <div class="plant-card" data-name="Shami Plant">
+        <img src=".\images\Shami.jpg" alt="Shami Plant (Prosopis cineraria)">
+        <h3>Shami Plant</h3>
+      </div>
+      <!-- Flower Plants -->
+      <div class="plant-card" data-name="Rose">
+        <img src=".\images\Rose.jpg" alt="Rose">
+        <h3>Rose</h3>
+      </div>
+      <div class="plant-card" data-name="Jasmine">
+        <img src=".\images\Jasmine.jpg" alt="Jasmine">
+        <h3>Jasmine</h3>
+      </div>
+      <div class="plant-card" data-name="Hibiscus">
+        <img src=".\images\Hibiscus.jpg" alt="Hibiscus">
+        <h3>Hibiscus</h3>
+      </div>
+      <div class="plant-card" data-name="Marigold">
+        <img src=".\images\Marigold.jpg" alt="Marigold">
+        <h3>Marigold</h3>
+      </div>
+    </div>
+  </main>
+
+  <!-- Plant Info Modal -->
+  <div class="modal" id="plantModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h2 id="plantName"></h2>
+      <p id="plantInfo"></p>
+    </div>
+  </div>
+
+  <!-- Chatbot Sidebar -->
+  <div class="chatbot-panel" id="chatbotPanel">
+    <div class="chatbot-header">
+      🌱 Nurturing AI Assistant
+      <button class="close-chat" onclick="toggleChat()">✖</button>
+    </div>
+    <div class="chatbot-body" id="chatBody">
+      <p>Hello! I can help with plant care, disease solutions, and reminders.</p>
+    </div>
+    <div class="chatbot-footer">
+      <input type="text" id="chatInput" placeholder="Type your question...">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <!-- Floating AI Button -->
+  <button class="chat-toggle" onclick="toggleChat()">🤖 AI Assistant</button>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

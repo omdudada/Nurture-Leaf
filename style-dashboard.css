@@ -1,0 +1,377 @@
+/* 🌿 Nurtura Modern Dashboard CSS */
+
+/* General */
+body {
+  margin: 0;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  background: 
+    linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), 
+    url('./5151867.jpg') center/cover no-repeat fixed;
+  border: 12px solid #2e7d32;
+  min-height: 100vh;
+  display: flex;
+  color: #333;
+  overflow-x: hidden;
+}
+
+:root {
+  --green: #2e7d32;
+  --light-green: #66bb6a;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --radius: 14px;
+  --transition: 0.3s ease;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: linear-gradient(180deg, #2e7d32, #388e3c);
+  color: white;
+  height: 100vh;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: -260px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+  box-shadow: 4px 0 10px rgba(0,0,0,0.15);
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.sidebar .logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.sidebar .logo img {
+  width: 42px;
+  height: 42px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background: white;
+  padding: 5px;
+}
+
+.sidebar nav a {
+  display: block;
+  margin: 14px 0;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s;
+}
+
+.sidebar nav a:hover {
+  color: #c8facc;
+  transform: translateX(5px);
+}
+
+/* Submenu */
+.submenu .submenu-items {
+  display: none;
+  margin-left: 15px;
+}
+
+.submenu:hover .submenu-items {
+  display: block;
+}
+
+/* Hamburger */
+.hamburger {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background: var(--green);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 1100;
+  box-shadow: 0 4px 10px var(--shadow);
+  transition: transform var(--transition);
+}
+
+.hamburger:hover {
+  transform: scale(1.08);
+}
+
+/* Search Bar */
+.search-bar {
+  margin: 25px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar input {
+  width: 340px;
+  padding: 12px 18px;
+  border: 2px solid var(--green);
+  border-radius: 50px;
+  font-size: 1rem;
+  outline: none;
+  transition: box-shadow var(--transition);
+}
+
+.search-bar input:focus {
+  box-shadow: 0px 0px 10px rgba(46, 125, 50, 0.4);
+}
+
+.clear-search {
+  background: transparent;
+  border: none;
+  color: var(--green);
+  font-size: 1.3rem;
+  cursor: pointer;
+  margin-left: -35px;
+  outline: none;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 30px;
+  margin-left: 0;
+  text-align: center;
+}
+
+/* 🌱 Plant Gallery */
+.plant-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+  justify-items: center;
+}
+
+.plant-card {
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+  width: 180px;
+  height: 240px;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+}
+
+.plant-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.plant-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.plant-card h3 {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+/* 🌼 Modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.45);
+  z-index: 2000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 14px;
+  padding: 24px;
+  width: min(720px, 90%);
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.modal-content .modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border: none;
+  background: transparent;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* 💬 Chatbot Panel */
+.chatbot-panel {
+  position: fixed;
+  top: 0;
+  right: -520px;
+  width: 520px;
+  height: 100vh;
+  background: #ffffff;
+  border-left: 6px solid var(--green);
+  box-shadow: -6px 0 20px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  transition: right 0.35s ease;
+  z-index: 1200;
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+
+.chatbot-panel.open {
+  right: 0;
+}
+
+.chatbot-header {
+  background: linear-gradient(90deg, var(--green), var(--light-green));
+  color: white;
+  padding: 18px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 16px;
+}
+
+.chatbot-body {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  font-size: 0.95rem;
+}
+
+.chatbot-footer {
+  display: flex;
+  border-top: 1px solid #ccc;
+  padding: 10px;
+  background: #f8f8f8;
+}
+
+.chatbot-footer input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+}
+
+.chatbot-footer button {
+  background: var(--green);
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-left: 8px;
+  transition: all var(--transition);
+}
+
+.chatbot-footer button:hover {
+  background: var(--light-green);
+}
+
+/* 🤖 Floating Nurtura AI Button */
+.chat-toggle {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: linear-gradient(135deg, #2e7d32, #43a047);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  padding: 22px 32px;
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: 600;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  z-index: 1100;
+  transition: all 0.25s ease;
+}
+
+.chat-toggle:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .plant-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .chatbot-panel {
+    width: 100%;
+    right: -100%;
+  }
+  .chatbot-panel.open {
+    right: 0;
+  }
+  .chat-toggle {
+    padding: 18px 26px;
+    font-size: 1.1rem;
+  }
+}
+/* Hide hamburger when sidebar is open */
+.sidebar.open ~ .hamburger {
+  display: none;
+}
+/* Sidebar active link styling */
+.sidebar-menu a.active {
+  background-color: #8bb78e;
+  color: #2e7d32;
+  font-weight: 600;
+  border-left: 4px solid #2e7d32;
+}
+
+/* Sidebar open/close animations (optional) */
+.sidebar {
+  transform: translateX(-250px);
+  transition: transform 0.3s ease;
+}
+.sidebar.open {
+  transform: translateX(0);
+}
+
+/* Hide the sidebar toggle button when sidebar is open */
+.hamburger {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: #2e7d32;
+  color: white;
+  border: none;
+  padding: 10px 12px;
+  font-size: 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 1000;
+}
+

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Nurture Leaf - Smart Plant Care
+  </title>
+  <link href="./logo.png" rel="icon" type="image/png"/>
+  <link href="style.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   html { scroll-behavior: smooth; }
+  </style>
+
+ </head>
+ <body>
+  <!-- Header -->
+  <header>
+   <div class="logo">
+    <img alt="Nurture Leaf Logo" src="./logo.png"/>
+    <span>
+     Nurture Leaf
+    </span>
+   </div>
+   <nav>
+    <a href="#about">
+     About
+    </a>
+    <a href="#solutions">
+     Solutions
+    </a>
+    <a href="#applications">
+     Applications
+    </a>
+    <a href="#future">
+     Future Scope
+    </a>
+    <a class="btn" href="login.html">
+     Login / Sign Up
+    </a>
+   </nav>
+  </header>
+  <!-- Hero Section -->
+  <section class="hero fade-up">
+   <div class="hero-text">
+    <h1>
+     Revolutionizing Plant Care with Technology
+    </h1>
+    <p>
+     Smart monitoring • AI disease detection • Personalized plant care
+    </p>
+    <a class="hero-btn" href="login.html">
+     Get Started
+    </a>
+   </div>
+  </section>
+  <!-- Add a container div around the selected sections -->
+  <div class="container">
+   <!-- About -->
+   <section class="about fade-up" id="about">
+    <h2>
+     About Nurture Leaf
+    </h2>
+    <div class="about-content">
+     <img alt="Plant Care Screenshot" src="./Screenshot_1.png"/>
+     <p>
+      Nurture Leaf is a smart plant care platform that simplifies plant maintenance for everyone.
+                    We integrate IoT sensors, AI disease detection, and automated reminders to make plant care
+                    easy and effective – from home gardening to smart farming.Nurture Leaf bridges the gap between nature and technology by integrating IoT sensors, data analytics, and machine learning to offer real-time insights into plant health. 
+                    It continuously monitors key parameters such as soil moisture, temperature, and sunlight exposure to ensure plants receive exactly what they need. 
+                    
+
+
+     </p>
+    </div>
+   </section>
+   <!-- Solutions -->
+   <section class="solutions fade-up" id="solutions">
+    <h2>
+     Our Smart Solutions
+    </h2>
+    <div class="solution-grid">
+     <div class="card">
+      <img alt="Sensors" src="https://images.unsplash.com/photo-1586880244406-556ebe35f282"/>
+      <h3>
+       IoT Monitoring
+      </h3>
+      <p>
+       Track soil moisture, light, temperature, and nutrients in real-time. Our innovative IoT-based platform automates plant care through real-time data collection and intelligent decision-making.
+      </p>
+     </div>
+     <div class="card">
+      <img alt="AI" src="https://images.unsplash.com/photo-1563201515-adbe35c669c5"/>
+      <h3>
+       AI Disease Detection
+      </h3>
+      <p>
+       Identify plant diseases early with image-based AI analysis. While our AI algorithms process this data to trigger irrigation, lighting, or nutrient adjustments as needed. 
+      </p>
+     </div>
+     <div class="card">
+      <img alt="Automation" src="https://images.unsplash.com/photo-1556912173-3bb406ef7e77"/>
+      <h3>
+       Smart Care
+      </h3>
+      <p>
+       Get personalized watering, fertilizing, and care recommendations.This predictive system not only detects potential issues early but also provides users with actionable insights for better yield and healthier plants.
+      </p>
+     </div>
+    </div>
+   </section>
+   <!-- Applications -->
+   <section class="applications fade-up" id="applications">
+    <h2>
+     Applications
+    </h2>
+    <ul>
+     <li>
+      🏡 Home Gardening: Smart reminders and guidance for hobbyists
+     </li>
+     <li>
+      🌱 Nurseries: Automated plant care and monitoring at scale
+     </li>
+     <li>
+      🚜 Smart Farming: IoT-integrated crop monitoring and optimization
+     </li>
+     <li>
+      🏫 Education: Teaching tools for botany and plant research
+     </li>
+    <li>🌻 Urban Gardening: Enables city dwellers to maintain healthy indoor plants with minimal effort.</li>
+  <li>🚜 Commercial Agriculture: Provides farmers with data-driven decisions to maximize productivity and conserve resources.</li>
+    </ul>
+   </section>
+   <!-- Future Scope -->
+   <section class="future fade-up" id="future">
+    <h2>
+     Future Scope
+    </h2>
+    <div class="future-content">
+     <img alt="Future Plants" src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6"/>
+     <p>
+      By 2028, Nurture Leaf aims to create a global plant care ecosystem
+                    with predictive AI, advanced sensors, robotic automation, and
+                    community-driven plant databases – building a greener, sustainable world.
+                    As we move forward, Nurture Leaf envisions expanding its platform with advanced AI models capable of identifying plant diseases using image recognition. Integration with mobile applications will allow users to receive instant health reports and control devices remotely.
+                    
+                    
+
+
+    </p>
+    </div>
+   </section>
+  </div>
+  <section id="impact" class="fade-up">
+  <h2>Our Environmental Impact</h2>
+  <p>
+    Every Nurture Leaf system contributes to smarter water usage, energy conservation, and reduced waste. By optimizing plant growth with data-driven insights, we’re helping communities take a step toward a greener planet — one leaf at a time.
+  </p>
+</section>
+
+  <!-- Footer -->
+  <footer>
+   <p>
+    © 2025 Nurture Leaf | A Greener World with Smarter Plant Care 🌍
+   </p>
+  </footer>
+  <button id="topBtn">
+   ⬆️
+  </button>
+  <script>
+const faders = document.querySelectorAll('.fade-up');
+
+// Always show all fade-up elements on load
+window.addEventListener('DOMContentLoaded', () => {
+  faders.forEach(fade => fade.classList.add('show'));
+});
+
+// Optionally, keep scroll logic if you want to re-animate on scroll
+// window.addEventListener('scroll', checkFadeVisibility);
+</script>
+ </body>
+</html>

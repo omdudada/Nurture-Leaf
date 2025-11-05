@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nurtura - Plant Dashboard</title>
+  <link rel="stylesheet" href="style-dashboard.css">
+  <style>
+    /* Additional styles for sections */
+    .content-section {
+      display: none;
+      padding: 20px;
+      animation: fadeIn 0.3s ease-in;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .section-header h1 {
+      color: #2e7d32;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    
+    .section-header p {
+      color: #666;
+      font-size: 1.1rem;
+    }
+    
+    .info-card {
+      background: white;
+      border-radius: 14px;
+      padding: 25px;
+      margin: 20px auto;
+      max-width: 900px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    .info-card h3 {
+      color: #2e7d32;
+      margin-bottom: 15px;
+    }
+    
+    .info-card p, .info-card ul {
+      color: #555;
+      line-height: 1.8;
+    }
+    
+    .info-card ul {
+      padding-left: 20px;
+    }
+    
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 30px auto;
+      max-width: 1000px;
+    }
+    
+    .feature-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .feature-icon {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+    
+    .coming-soon {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2f1 100%);
+      border: 2px dashed #2e7d32;
+      padding: 60px 20px;
+      text-align: center;
+      border-radius: 14px;
+      margin: 40px auto;
+      max-width: 600px;
+    }
+    
+    .coming-soon h2 {
+      color: #2e7d32;
+      margin-bottom: 10px;
+    }
+    
+    .coming-soon p {
+      color: #666;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Hamburger Menu -->
+  <button class="hamburger" onclick="toggleSidebar()">☰</button>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">
+        <img src="./logo.png" alt="Nurtura Logo">
+        <span>Nurture Leaf</span>
+      </div>
+      <button class="close-btn" onclick="toggleSidebar()">✖</button>
+    </div>
+    <nav>
+      <ul class="sidebar-menu">
+        <li><a href="#" class="active" onclick="showSection('homeSection', this)"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="#" onclick="showSection('myPlantsSection', this)"><i class="fa fa-leaf"></i> My Plants</a></li>
+        <li><a href="#" onclick="showSection('communitySection', this)"><i class="fa fa-globe"></i> Community</a></li>
+        <li><a href="#" onclick="showSection('guidesSection', this)"><i class="fa fa-book"></i> Guides & Resources</a></li>
+        <li><a href="#" onclick="showSection('shopSection', this)"><i class="fa fa-shopping-cart"></i> Shop</a></li>
+        <li><a href="#" onclick="showSection('aboutSection', this)"><i class="fa fa-info-circle"></i> About</a></li>
+        <li><a href="#" onclick="showSection('faqSection', this)"><i class="fa fa-question-circle"></i> FAQ</a></li>
+        <li><a href="logout.html"><i class="fa fa-sign-out"></i> Logout</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    
+    <!-- HOME SECTION -->
+    <div class="content-section" id="homeSection">
+      <!-- Search -->
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="🔍 Search plant...">
+        <button id="clearSearch" class="clear-search" type="button" title="Clear search" style="display:none;">✖</button>
+      </div>
+
+      <!-- Plant Gallery -->
+      <div class="plant-gallery" id="plantGallery">
+        <div class="plant-card" data-name="Monstera">
+          <img src="./Monstera.jpg" alt="Monstera deliciosa">
+          <h3>Monstera</h3>
+        </div>
+        <div class="plant-card" data-name="Pothos">
+          <img src="./Pothos.jpg" alt="Pothos">
+          <h3>Pothos</h3>
+        </div>
+        <div class="plant-card" data-name="Jade Plant">
+          <img src="./Jade.jpg" alt="Jade Plant">
+          <h3>Jade Plant</h3>
+        </div>
+        <div class="plant-card" data-name="Prayer Plant">
+          <img src="./Prayer.jpg" alt="Prayer Plant">
+          <h3>Prayer Plant</h3>
+        </div>
+        <div class="plant-card" data-name="Spider Plant">
+          <img src="./Spider.jpg" alt="Spider Plant">
+          <h3>Spider Plant</h3>
+        </div>
+        <div class="plant-card" data-name="Areca Palm">
+          <img src="./ArecaPalm.jpg" alt="Areca Palm">
+          <h3>Areca Palm</h3>
+        </div>
+        <div class="plant-card" data-name="Rubber Plant">
+          <img src="./Rubber.jpg" alt="Rubber Plant">
+          <h3>Rubber Plant</h3>
+        </div>
+        <div class="plant-card" data-name="Boston Fern">
+          <img src="./Bostorn.jpg" alt="Boston Fern">
+          <h3>Boston Fern</h3>
+        </div>
+        <div class="plant-card" data-name="Croton">
+          <img src="./Croton.jpg" alt="Croton">
+          <h3>Croton</h3>
+        </div>
+        <div class="plant-card" data-name="Oyster Plant">
+          <img src="./Oyester.jpg" alt="Oyster Plant">
+          <h3>Oyster Plant</h3>
+        </div>
+        <div class="plant-card" data-name="Cactus">
+          <img src="./Cactus.jpg" alt="Cactus">
+          <h3>Cactus</h3>
+        </div>
+        <div class="plant-card" data-name="Tulsi">
+          <img src="./Tulsi.jpg" alt="Tulsi">
+          <h3>Tulsi</h3>
+        </div>
+        <div class="plant-card" data-name="Aloe Vera">
+          <img src="./Aloe vera.jpg" alt="Aloe Vera">
+          <h3>Aloe Vera</h3>
+        </div>
+        <div class="plant-card" data-name="Dragon Plant">
+          <img src="./Dragon plant.jpg" alt="Dragon Plant">
+          <h3>Dragon Plant</h3>
+        </div>
+        <div class="plant-card" data-name="Bamboo Tree">
+          <img src="./Bamboo.jpg" alt="Bamboo Tree">
+          <h3>Bamboo Tree</h3>
+        </div>
+        <div class="plant-card" data-name="Shami Plant">
+          <img src="./Shami.jpg" alt="Shami Plant">
+          <h3>Shami Plant</h3>
+        </div>
+        <div class="plant-card" data-name="Rose">
+          <img src="./Rose.jpg" alt="Rose">
+          <h3>Rose</h3>
+        </div>
+        <div class="plant-card" data-name="Jasmine">
+          <img src="./Jasmine.jpg" alt="Jasmine">
+          <h3>Jasmine</h3>
+        </div>
+        <div class="plant-card" data-name="Hibiscus">
+          <img src="./Hibiscus.jpg" alt="Hibiscus">
+          <h3>Hibiscus</h3>
+        </div>
+        <div class="plant-card" data-name="Marigold">
+          <img src="./Marigold.jpg" alt="Marigold">
+          <h3>Marigold</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- MY PLANTS SECTION -->
+    <div class="content-section" id="myPlantsSection">
+      <div class="section-header">
+        <h1>🌱 My Plant Collection</h1>
+        <p>Track and manage your personal plant collection</p>
+      </div>
+      <div class="coming-soon">
+        <div class="feature-icon">🪴</div>
+        <h2>Coming Soon!</h2>
+        <p>Soon you'll be able to add plants to your personal collection, set watering reminders, track growth, and get personalized care tips.</p>
+      </div>
+    </div>
+
+    <!-- COMMUNITY SECTION -->
+    <div class="content-section" id="communitySection">
+      <div class="section-header">
+        <h1>🌍 Plant Community</h1>
+        <p>Connect with fellow plant enthusiasts</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">💬</div>
+          <h3>Forums</h3>
+          <p>Share tips and experiences with other plant lovers</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📸</div>
+          <h3>Photo Gallery</h3>
+          <p>Show off your green beauties</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏆</div>
+          <h3>Challenges</h3>
+          <p>Participate in monthly growing challenges</p>
+        </div>
+      </div>
+      <div class="coming-soon">
+        <h2>Building Our Green Community</h2>
+        <p>We're working hard to create the perfect space for plant lovers to connect!</p>
+      </div>
+    </div>
+
+    <!-- GUIDES SECTION -->
+    <div class="content-section" id="guidesSection">
+      <div class="section-header">
+        <h1>📚 Plant Care Guides</h1>
+        <p>Everything you need to know about plant care</p>
+      </div>
+      
+      <div class="info-card">
+        <h3>🌿 Beginner's Guide to Indoor Plants</h3>
+        <p>Starting your plant journey? Here are the essentials:</p>
+        <ul>
+          <li><strong>Start Simple:</strong> Begin with easy-care plants like Pothos, Snake Plant, or Spider Plant</li>
+          <li><strong>Understand Light:</strong> Learn the difference between direct, indirect, and low light</li>
+          <li><strong>Watering Wisdom:</strong> More plants die from overwatering than underwatering</li>
+          <li><strong>Drainage is Key:</strong> Always use pots with drainage holes</li>
+          <li><strong>Be Patient:</strong> Plants take time to adjust to new environments</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <h3>💧 Watering Tips</h3>
+        <ul>
+          <li>Check soil moisture before watering (finger test: top 1-2 inches should be dry)</li>
+          <li>Water thoroughly until it drains from the bottom</li>
+          <li>Use room temperature water</li>
+          <li>Adjust frequency based on season and humidity</li>
+          <li>Consider bottom watering for sensitive plants</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <h3>☀️ Light Requirements Guide</h3>
+        <p><strong>Bright Direct:</strong> South-facing windows, 6+ hours direct sun (cacti, succulents)</p>
+        <p><strong>Bright Indirect:</strong> Near windows with sheer curtains (Monstera, Pothos)</p>
+        <p><strong>Medium Light:</strong> Several feet from windows (Prayer Plant, Dracaena)</p>
+        <p><strong>Low Light:</strong> North-facing or away from windows (Snake Plant, ZZ Plant)</p>
+      </div>
+
+      <div class="info-card">
+        <h3>🐛 Common Plant Problems</h3>
+        <ul>
+          <li><strong>Yellow Leaves:</strong> Usually overwatering or poor drainage</li>
+          <li><strong>Brown Tips:</strong> Low humidity, fluoride in water, or underwatering</li>
+          <li><strong>Drooping:</strong> Needs water or too much direct sun</li>
+          <li><strong>Leggy Growth:</strong> Not enough light</li>
+          <li><strong>No Growth:</strong> Needs fertilizer or more light</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SHOP SECTION -->
+    <div class="content-section" id="shopSection">
+      <div class="section-header">
+        <h1>🛒 Plant Shop</h1>
+        <p>Everything for your green space</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🌱</div>
+          <h3>Live Plants</h3>
+          <p>Healthy, nursery-grown plants delivered to your door</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🪴</div>
+          <h3>Pots & Planters</h3>
+          <p>Stylish containers for every aesthetic</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌿</div>
+          <h3>Care Tools</h3>
+          <p>Essential tools and accessories</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💧</div>
+          <h3>Soil & Fertilizer</h3>
+          <p>Premium growing mediums and nutrients</p>
+        </div>
+      </div>
+      <div class="coming-soon">
+        <h2>Shop Opening Soon!</h2>
+        <p>We're curating the best plant products for you. Stay tuned!</p>
+      </div>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <div class="content-section" id="aboutSection">
+      <div class="section-header">
+        <h1>🌿 About Nurtura</h1>
+        <p>Growing together, one plant at a time</p>
+      </div>
+      
+      <div class="info-card">
+        <h3>Our Mission</h3>
+        <p>Nurtura was created to make plant care accessible, enjoyable, and successful for everyone. Whether you're a seasoned plant parent or just starting your green journey, we're here to help your plants thrive.</p>
+      </div>
+
+      <div class="info-card">
+        <h3>What We Offer</h3>
+        <ul>
+          <li><strong>Comprehensive Plant Database:</strong> Detailed care guides for 20+ popular plants</li>
+          <li><strong>AI-Powered Assistant:</strong> Get instant answers to your plant care questions</li>
+          <li><strong>Easy-to-Use Interface:</strong> Beautiful, intuitive design for seamless navigation</li>
+          <li><strong>Expert Knowledge:</strong> Curated information from horticulture experts</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <h3>Our Vision</h3>
+        <p>We envision a world where everyone can experience the joy and benefits of nurturing plants. By combining technology with botanical knowledge, we're making it easier than ever to create your own green oasis.</p>
+      </div>
+
+      <div class="info-card">
+        <h3>Contact Us</h3>
+        <p>Have questions or feedback? We'd love to hear from you!</p>
+        <p>📧 Email: support@nurtura.com</p>
+        <p>🌐 Follow us on social media for daily plant tips and inspiration</p>
+      </div>
+    </div>
+
+    <!-- FAQ SECTION -->
+    <div class="content-section" id="faqSection">
+      <div class="section-header">
+        <h1>❓ Frequently Asked Questions</h1>
+        <p>Quick answers to common questions</p>
+      </div>
+
+      <div class="info-card">
+        <h3>How often should I water my plants?</h3>
+        <p>It depends on the plant type, pot size, light, and season. Most plants need water when the top 1-2 inches of soil feel dry. Check each plant's specific care guide for detailed watering instructions.</p>
+      </div>
+
+      <div class="info-card">
+        <h3>Why are my plant's leaves turning yellow?</h3>
+        <p>Yellow leaves are most commonly caused by overwatering, poor drainage, or nutrient deficiency. Check if the soil is consistently wet and ensure your pot has drainage holes. Adjust your watering schedule accordingly.</p>
+      </div>
+
+      <div class="info-card">
+        <h3>Can I use tap water for my plants?</h3>
+        <p>Most plants tolerate tap water fine, but some sensitive plants (like Prayer Plants or Ferns) prefer filtered or distilled water due to chlorine and fluoride. Let tap water sit overnight to allow chemicals to dissipate.</p>
+      </div>
+
+      <div class="info-card">
+        <h3>How do I know if my plant needs more light?</h3>
+        <p>Signs of insufficient light include: leggy growth (long stems between leaves), small new leaves, leaning toward the light source, loss of variegation, and slow growth. Move your plant closer to a window or add a grow light.</p>
+      </div>
+
+      <div class="info-card">
+        <h3>When should I repot my plant?</h3>
+        <p>Repot when you see roots coming out of drainage holes, water drains too quickly, growth has slowed, or the plant becomes top-heavy. Best time is early spring before the growing season. Choose a pot 1-2 inches larger.</p>
+      </div>
+
+      <div class="info-card">
+        <h3>How do I increase humidity for my plants?</h3>
+        <p>Methods include: grouping plants together, using a pebble tray with water, misting (though less effective), using a humidifier, or placing plants in naturally humid rooms like bathrooms.</p>
+      </div>
+
+      <div class="info-card">
+        <h3>What's the best fertilizer for indoor plants?</h3>
+        <p>A balanced liquid fertilizer (like 20-20-20 or 10-10-10) diluted to half strength works well for most houseplants. Feed during the growing season (spring-summer) every 4-6 weeks. Always follow package instructions.</p>
+      </div>
+
+      <div class="info-card">
+        <h3>How do I deal with pests?</h3>
+        <p>Common indoor pests include spider mites, mealybugs, and fungus gnats. Isolate affected plants, wipe leaves with soapy water or neem oil solution, improve air circulation, and avoid overwatering. For severe infestations, use insecticidal soap.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Plant Info Modal -->
+  <div class="modal" id="plantModal" role="dialog" aria-modal="true" aria-labelledby="plantName" style="display:none;">
+    <div class="modal-content">
+      <button class="modal-close close-btn" onclick="closeModal()" aria-label="Close modal">✖</button>
+      <h2 id="plantName"></h2>
+      <p id="plantInfo"></p>
+    </div>
+  </div>
+
+  <!-- Chatbot Sidebar -->
+  <div class="chatbot-panel" id="chatbotPanel">
+    <div class="chatbot-header">
+      🌱 Nurtura AI
+      <button class="close-chat" onclick="toggleChat()">✖</button>
+    </div>
+    <div class="chatbot-body" id="chatBody">
+      <p>Hello! I can help with plant care, disease solutions, and reminders.</p>
+    </div>
+    <div class="chatbot-footer">
+      <input type="text" id="chatInput" placeholder="Type your question...">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <!-- Floating AI Button -->
+  <button class="chat-toggle" onclick="toggleChat()">🤖 Nurtura AI</button>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
