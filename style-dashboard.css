@@ -88,6 +88,129 @@ body {
   display: block;
 }
 
+/* Dashboard Header */
+.dashboard-header {
+  background: #2e7d32;
+  color: white;
+  padding: 14px 50px; /* Reduced vertical padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.dashboard-header .logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem; /* Reduced font size */
+  font-weight: bold;
+  margin-left: 50px; /* Space after sidebar */
+}
+
+.dashboard-header .logo img {
+  height: 40px; /* Reduced size */
+  width: 40px; /* Reduced size */
+  margin-right: 8px; /* Reduced margin */
+  border-radius: 50%;
+  background: white;
+  padding: 5px; /* Reduced padding */
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
+}
+
+.dashboard-header .logo span {
+  color: #c8facc;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Further reduced gap for more buttons */
+}
+
+.header-actions button {
+  color: rgba(255, 255, 255, 0.85);
+  background: none;
+  border: none;
+  padding: 8px 12px; /* Reduced padding */
+  font-size: 1rem; /* Smaller font size */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Reduced gap */
+  white-space: nowrap;
+  position: relative;
+}
+
+.header-actions .nav-btn {
+  position: relative;
+}
+
+.header-actions .nav-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #c8facc;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.header-actions .nav-btn:hover {
+  color: #fff;
+}
+
+.header-actions .nav-btn:hover::after {
+  width: 80%;
+}
+
+/* Styling for logout button - now matching other nav items */
+.header-actions .logout-btn {
+  margin-left: 15px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.85);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+  position: relative;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.header-actions .logout-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #ffcdd2;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.header-actions .logout-btn:hover {
+  color: #fff;
+}
+
+.header-actions .logout-btn:hover::after {
+  width: 80%;
+}
+
+.header-actions .logout-btn i {
+  font-size: inherit;
+  margin-right: 4px;
+}
+
 /* Hamburger */
 .hamburger {
   position: fixed;
@@ -344,11 +467,15 @@ body {
   display: none;
 }
 /* Sidebar active link styling */
-.sidebar-menu a.active {
-  background-color: #8bb78e;
-  color: #2e7d32;
-  font-weight: 600;
-  border-left: 4px solid #2e7d32;
+.sidebar-menu a.active, .sidebar-menu a:hover {
+	background-color: #8bb78e;
+	color: #2e7d32;
+	font-weight: 600;
+	border-left: 4px solid #2e7d32;
+	display: block;
+	padding: 5px 5px 5px 10px ;
+  border-radius: 6px 4px 4px 6px;
+  margin-left: -5px;
 }
 
 /* Sidebar open/close animations (optional) */
@@ -374,4 +501,5 @@ body {
   cursor: pointer;
   z-index: 1000;
 }
+
 
