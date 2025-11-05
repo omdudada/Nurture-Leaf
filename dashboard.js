@@ -720,7 +720,104 @@ function sendMessage() {
       watering: "Water thoroughly only when soil is 100% bone dry—typically every 2–3 weeks in summer, 4–6 weeks in winter. Use 'soak and dry' method. Jade stores water in thick leaves—overwatering = death. Use terracotta pots for faster drying.",
       light: "Bright direct sunlight for 4–6 hours daily is ideal—south or west window. Jade loves sun! Insufficient light causes etiolation (long, weak stems). Direct morning sun + filtered afternoon is perfect.",
       fertilizer: "Feed sparingly: every 6–8 weeks in spring/summer with diluted succulent fertilizer at ¼–½ strength. Avoid high-nitrogen—causes soft, leggy growth. No feeding in fall/winter."
-    }
+    },
+  prayerplant: {
+    disease: "Prayer Plant (Maranta leuconeura) diseases: Crispy brown leaf edges = low humidity or dry soil. Fix: mist daily, use pebble tray, or grow in bathroom. Root rot from soggy soil — repot in well-draining mix, trim black roots. Spider mites love dry conditions — look for webbing and yellow stippling; shower plant and apply neem oil. Fungal leaf spot: brown/black spots — improve airflow, avoid wetting leaves.",
+    watering: "Keep soil consistently moist but never waterlogged — water when top ½ inch feels dry (every 4–7 days). Use distilled or rainwater to avoid fluoride/chlorine burn (tap water causes brown tips). Bottom watering prevents leaf rot. Reduce slightly in winter but never let it dry out fully.",
+    light: "Bright to medium indirect light — east or north window. Avoid direct sun (scorches leaves). Low light = faded variegation and slow growth. Prayer plants 'pray' (fold up) at night — if they don’t, light may be too low. Use grow lights in dark rooms (12–14 hrs/day).",
+    fertilizer: "Feed every 2 weeks during growing season (spring–summer) with balanced liquid fertilizer (e.g., 10-10-10) at ½ strength. Reduce to monthly in fall/winter. Over-fertilizing burns sensitive roots — always dilute. Flush soil every 3 months."
+  },
+
+  spiderplant: {
+    disease: "Spider Plant (Chlorophytum comosum) diseases: Brown leaf tips = fluoride in tap water, over-fertilizing, or low humidity. Fix: use filtered/rainwater, dilute fertilizer, mist regularly. Root rot from poor drainage — repot in fresh, airy mix. Pale, leggy growth = too little light. Rare pests: aphids, mealybugs — rinse with water or use insecticidal soap.",
+    watering: "Water when top 1 inch of soil is dry — usually weekly. Let excess drain fully. Spider plants are forgiving but hate soggy feet. Reduce in winter. Plantlets (babies) need more frequent watering than mature plants. Pro tip: submerge pot in water for 10 mins if very dry.",
+    light: "Medium to bright indirect light. Tolerates low light but grows slowly and loses variegation. Avoid harsh direct sun (bleaches leaves). East or west windows ideal. North = okay but slower. Great for hanging baskets near bright windows.",
+    fertilizer: "Feed monthly in spring/summer with balanced liquid fertilizer (10-10-10) at ½ strength. Skip winter. Over-fertilizing causes tip burn. Use organic options like fish emulsion or compost tea for healthier growth."
+  },
+
+  arecapalm: {
+    disease: "Areca Palm (Dypsis lutescens) diseases: Yellow lower fronds = natural aging or overwatering. Brown tips = dry air, fluoride, or inconsistent watering. Spider mites (fine webbing) thrive in dry indoor air — increase humidity to 50%+, shower weekly. Lethal yellowing (bacterial) = fatal; no cure — discard plant. Potassium deficiency = orange spots on older leaves.",
+    watering: "Water when top 1–2 inches of soil are dry (every 7–10 days). Keep soil lightly moist but not soggy. Use well-draining palm mix. Reduce in winter. Areca hates wet feet — yellowing = drowning. Mist fronds daily in dry climates.",
+    light: "Bright filtered/indirect light — east or west window with sheer curtain. Tolerates medium light but grows slowly. Avoid direct afternoon sun (scorches). Rotate weekly for even growth. Great for bright offices or atriums.",
+    fertilizer: "Feed monthly from March–September with palm-specific slow-release fertilizer (8-2-12 or similar). Liquid feed every 2 weeks if fast growth desired. Avoid high-nitrogen — causes weak fronds. Flush soil quarterly to remove salts."
+  },
+
+  rubberplant: {
+    disease: "Rubber Plant (Ficus elastica) diseases: Sudden leaf drop = shock from moving, cold draft, over/under-watering, or low light. Edema (blisters on leaves) = inconsistent watering. Mealybugs & scale on stems — wipe with alcohol. Root rot from poor drainage — repot every 2 years. Anthracnose (brown spots) = fungal — improve airflow.",
+    watering: "Water when top 2 inches of soil are dry (every 7–14 days). Water thoroughly, let drain. Reduce in winter. Wipe dusty leaves monthly — they photosynthesize! Use lukewarm water. Rubber plant prefers slight drying between waterings.",
+    light: "Bright indirect light — east or west window. Tolerates medium but leaves lose gloss. Direct morning sun okay, avoid harsh afternoon. Rotate for symmetry. Low light = small, dark leaves and legginess.",
+    fertilizer: "Feed every 4 weeks in spring/summer with balanced houseplant fertilizer (20-20-20) at ½ strength. Skip winter. Flush soil every 3 months. New growth = feeding time! Use slow-release pellets for convenience."
+  },
+
+  bostonfern: {
+    disease: "Boston Fern (Nephrolepis exaltata) diseases: Brown, crispy fronds = low humidity or underwatering. Pale, sparse growth = insufficient light. Root rot from soggy soil — use chunky, airy mix. Mealybugs or scale under fronds — rinse and treat with neem. Leaf drop from dry air or cold (<15°C).",
+    watering: "Keep soil consistently moist — water 2–3 times weekly in summer, less in winter. Never let it dry out. Use distilled water if possible. Mist daily or use humidifier. Bottom watering prevents crown rot. Ideal for bathrooms or kitchens.",
+    light: "Bright indirect light or dappled shade — north or east window. Avoid direct sun (scorches). Tolerates lower light but grows slowly. Grow lights (12–16 hrs) work well indoors.",
+    fertilizer: "Feed weekly in growing season with diluted liquid fertilizer (20-20-20 at ¼ strength). Reduce to monthly in winter. Over-fertilizing burns fronds. Use fish emulsion for lush growth."
+  },
+
+  croton: {
+    disease: "Croton (Codiaeum variegatum) diseases: Leaf drop = stress (cold, dry air, moving, underwatering). Spider mites = yellow speckling + webbing — shower and apply miticide. Root rot = soggy soil — repot in well-draining mix. Fungal leaf spot = improve airflow. Color fading = low light.",
+    watering: "Water when top 1 inch is dry (every 5–7 days). Keep evenly moist in summer, slightly drier in winter. Mist daily for humidity. Crotons hate dry soil — wilting = emergency watering. Use warm water.",
+    light: "Very bright direct light — south window. 6+ hours of sun keeps colors vivid. Low light = green, dull leaves. Outdoors: full sun in morning, shade in afternoon. Rotate often.",
+    fertilizer: "Feed every 2–3 weeks in spring/summer with high-nitrogen colorful leaf fertilizer (e.g., 24-8-16). Reduce in winter. Flush soil to prevent burn. Vibrant colors = proper feeding + light."
+  },
+
+  oysterplant: {
+    disease: "Oyster Plant (Tradescantia spathacea) diseases: Leaf rot from overwatering — improve drainage. Brown tips = dry air or fluoride. Mealybugs in leaf axils — dab with alcohol. Leggy growth = low light. Fungal spots = avoid overhead watering.",
+    watering: "Water when top 1 inch is dry (every 5–7 days). Keep moderately moist. Well-draining soil essential. Reduce in winter. Tolerates slight drought better than soggy.",
+    light: "Bright indirect to partial shade. East or west window. Direct sun okay in morning. Low light = weak, stretched growth. Variegated types need more light.",
+    fertilizer: "Feed monthly in spring/summer with balanced liquid fertilizer at ½ strength. Skip winter. Easy on fertilizer — burns easily."
+  },
+
+  cactus: {
+    disease: "Cactus diseases: Basal rot = overwatering — cut away soft parts, let callous, repot dry. Mealybugs = white fluff — alcohol swab. Corking (woody base) = normal aging. Sunburn = pale patches — acclimate gradually to full sun.",
+    watering: "Water deeply every 2–4 weeks in summer when soil is fully dry. Monthly or less in winter. Use cactus mix + perlite. No water in dormancy (winter for most). Terracotta pots help dry faster.",
+    light: "Full direct sun — 6+ hours. South window. Outdoors: full sun. Low light = etiolation (tall, thin). Rotate for even shape.",
+    fertilizer: "Feed 2–3 times in growing season (spring–summer) with cactus fertilizer (5-10-10) at ¼ strength. No winter feeding. Less is more!"
+  },
+
+  tulsi: {
+    disease: "Tulsi (Holy Basil) diseases: Downy mildew (yellow + purple undersides) = improve airflow, neem spray. Aphids on new growth — hose off or use soap. Root rot = drainage issue. Leaf drop = cold (<15°C) or overwatering.",
+    watering: "Keep soil moist but not waterlogged — water daily in summer, every 2 days in winter. Morning watering best. Mulch to retain moisture. Pinch tips for bushiness.",
+    light: "Full sun — 6+ hours. South or west window. Tolerates heat. Indoors: grow light if needed. Weak growth = more sun!",
+    fertilizer: "Apply cow manure or vermicompost monthly. Liquid seaweed or neem cake water weekly. Avoid chemical fertilizers — tulsi is sensitive."
+  },
+
+  dragonplant: {
+    disease: "Dragon Plant (Dracaena spp.) diseases: Brown tips = fluoride, dry air, or overwatering — use filtered water, mist. Leaf spot = fungal — remove affected, improve air. Mealybugs in leaf joints — alcohol wipe. Soft stem = root rot.",
+    watering: "Water when top 1–2 inches dry (every 10–14 days). Reduce in winter. Well-draining soil. Wipe leaves to remove dust. Avoid cold water.",
+    light: "Bright to medium indirect light. East or west window. Tolerates low light but grows slowly. Direct sun scorches tips.",
+    fertilizer: "Feed every 6 weeks in spring/summer with balanced fertilizer (10-10-10) at ½ strength. Skip winter. Flush soil yearly."
+  },
+
+  bamboo: {
+    disease: "Lucky Bamboo (Dracaena sanderiana) diseases: Yellow stalks = too much light/fertilizer or old age. Root rot in water = change weekly. Brown tips = dry air or chlorine. Algae in vase = keep in indirect light.",
+    watering: "In water: change every 7–10 days with filtered water. In soil: keep moist, not soggy. Use distilled if tap water is hard. Submerge roots only.",
+    light: "Bright indirect light. Avoid direct sun (yellows leaves). Tolerates fluorescent office light. East window ideal.",
+    fertilizer: "2–3 drops of liquid fertilizer in water monthly (spring–summer). Skip winter. Over-fertilizing burns roots."
+  },
+
+  shami: {
+    disease: "Shami Plant (Prosopis cineraria) diseases: Leaf curl = aphids or water stress. Root rot = poor drainage. Powdery mildew = high humidity — neem oil. Slow growth = compacted soil.",
+    watering: "Water moderately — 2–3 times weekly in summer, once in winter. Drought-tolerant once established. Deep watering encourages roots.",
+    light: "Full sun — 6+ hours. Thrives in heat. Ideal for balconies or outdoors. Tolerates reflected heat.",
+    fertilizer: "Apply organic compost or bone meal at planting. Liquid feed monthly in growing season. Avoid excess nitrogen."
+  },
+
+  jasmine: {
+    disease: "Jasmine diseases: Bud drop = dry soil, low humidity, or temperature swings. Aph Amides or spider mites — neem oil weekly. Root rot = improve drainage. Yellow leaves = iron deficiency — chelated iron spray.",
+    watering: "Keep soil evenly moist during flowering. Water daily in summer, less in winter. Morning watering. Mulch to retain moisture.",
+    light: "Full sun to partial shade — 4–6 hours direct sun. South or west window. More sun = more blooms.",
+    fertilizer: "Use high-phosphorus bloom booster (10-30-20) weekly during bud formation. Reduce after flowering. Banana peel tea = natural potassium."
+  },
+
+  marigold: {
+    disease: "Marigold diseases: Aster yellows (deformed growth) = remove infected plants. Powdery mildew = sulfur spray. Slugs/snails = beer traps or crushed eggshells. Wilt = water at base, not leaves.",
+    watering: "Water when top 1 inch is dry. Avoid overhead watering — causes fungal issues. Morning watering best. Mulch to prevent splash.",
+    light: "Full sun — 6+ hours. More sun = more flowers. Tolerates heat. Deadhead spent blooms for continuous flowering.",
+    fertilizer: "Incorporate compost at planting. Side-dress with 5-10-10 every 4 weeks. Avoid excess nitrogen — causes leafy growth, fewer blooms."
+  }
   };
 
   // Logic: check multiple matches
